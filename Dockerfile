@@ -20,5 +20,8 @@ RUN npm install
 #Copy Source Files
 COPY . .
 
+#Generate API Docs
+RUN npm run docs
+
 #Start App Server
 CMD ["npm", "--trace-warnings" , "start"]

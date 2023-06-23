@@ -1,0 +1,72 @@
+{
+  "GetAllOrders": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "orderID": {
+          "type": "integer",
+          "example": 1
+        },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "example": "john"
+            },
+            "email": {
+              "type": "string",
+              "example": "john@gmail.com"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string",
+                  "example" : "123 main"
+                },
+                "city": {
+                  "type": "string",
+                  "example" : "Mumbai"
+                },
+                "state": {
+                  "type": "string",
+                  "example" : "MH"
+                },
+                "postalCode": {
+                  "type": "integer",
+                  "example" : 321456
+                }
+              }
+            }
+          }
+        },
+        "product": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "productName" : {
+                "type": "string",
+                "example" : "toy"
+              },
+              "quantity": {
+                "type": "integer",
+                "example" : 2
+              }
+            }
+          }
+        },
+        "orderDate": {
+          "type": "timestamp",
+          "example": "2023-06-23T10:50:41.712Z"
+        },
+        "priority": {
+          "type": "string",
+          "example": "low"
+        }
+      }
+    }
+  }
+}

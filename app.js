@@ -12,6 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/', router);
 
+app.use('/docs', express.static('docs/api'));
+
 // Catch HTTP 404
 // eslint-disable-next-line no-unused-vars
 app.use((request, response, next) => {
