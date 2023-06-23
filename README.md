@@ -39,6 +39,14 @@ $ docker-compose up
 4. The Node.js API should now be running on http://localhost:4000.
 5. The Node.js API Documentation now be running on http://localhost:4000/docs.
 
+## API Endpoints
+
+The following endpoints:
+
+- POST /orders: Create a new order.
+- GET /orders/:orderId: Retrieve a specific order by its ID.
+- GET /orders?priority=high: Retrieve all orders and also apply filter based on product name and priority.
+- DELETE /orders/:orderId: Delete a specific order by its ID.
 ## Tech Stack
 
 **Database:** PostgreSQL
