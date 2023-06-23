@@ -37,6 +37,7 @@ $ docker-compose up
 ```
 
 4. The Node.js API should now be running on http://localhost:4000.
+5. The Node.js API Documentation now be running on http://localhost:4000/docs.
 
 ## Tech Stack
 
