@@ -54,11 +54,11 @@ ALTER TABLE IF EXISTS "orderItems"
 CREATE INDEX IF NOT EXISTS "idx_customer_name" ON "customer" ("name");
 
 -- Insert data into customer table
-INSERT INTO customer ("name", "email")
+INSERT INTO "customer" ("name", "email")
 VALUES ('John', 'John@gmail.com');
 
 -- Insert data into product table
-INSERT INTO product ("productName")
+INSERT INTO "product" ("productName")
 VALUES ('Toy'), ('Basket'), ('Pen');
 
 -- Insert data into order table
@@ -66,9 +66,9 @@ INSERT INTO "order" ("customerID", "orderDate", "priority")
 VALUES (1, '2023-06-23', 'high');
 
 -- Insert data into orderItems table
-INSERT INTO orderItems ("orderID", "productID", "quantity")
-VALUES (1, 2, 2);
+INSERT INTO "orderItems" ("orderID", "productID", "quantity")
+VALUES (1, 1, 1);
 
 -- Insert data into customerAddresses table
-INSERT INTO customerAddresses ("street", "city", "state", "postalCode", "customerID")
+INSERT INTO "customerAddresses" ("street", "city", "state", "postalCode", "customerID")
 VALUES ('123 Main St', 'Chennai', 'Tamilnadu', 600004, 1);
