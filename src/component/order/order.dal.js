@@ -34,19 +34,19 @@ module.exports = {
       o."priority",
       c."name" ,
       c."email",
-      ca.street ,
-      ca.city ,
-      ca.state ,
-      ca."postalCode" ,
-      oi."productID" ,
-      oi.quantity ,
+      ca."street" ,
+      ca."city",
+      ca."state",
+      ca."postalCode",
+      oi."productID",
+      oi."quantity",
       p."productName"
     FROM
       "order" o
     JOIN customer c ON
       o."customerID" = c."customerID"
     JOIN "customerAddresses" ca ON
-      ca."customerId" = c."customerID"
+      ca."customerID" = c."customerID"
     JOIN "orderItems" oi ON
       oi."orderID" = o."orderID"
     JOIN product p ON
@@ -88,35 +88,35 @@ module.exports = {
     return queryResult.rows;
   },
 
-  getOrderById: async (dbClient, orderId) => {
+  getOrderById: async (dbClient, orderID) => {
     const query = `
     SELECT
       o."orderID",
       o."customerID",
       o."orderDate",
       o."priority",
-      c."name" ,
+      c."name",
       c."email",
-      ca.street ,
-      ca.city ,
-      ca.state ,
-      ca."postalCode" ,
-      oi."productID" ,
-      oi.quantity ,
+      ca."street",
+      ca."city",
+      ca."state",
+      ca."postalCode",
+      oi."productID",
+      oi."quantity",
       p."productName"
     FROM
       "order" o
     JOIN customer c ON
       o."customerID" = c."customerID"
     JOIN "customerAddresses" ca ON
-      ca."customerId" = c."customerID"
+      ca."customerID" = c."customerID"
     JOIN "orderItems" oi ON
       oi."orderID" = o."orderID"
     JOIN product p ON
       p."productID" = oi."productID"
     WHERE o."orderID" = $1; 
     `;
-    const parameters = [orderId];
+    const parameters = [orderID];
     const order = await dbClient.query(query, parameters);
     if (!order.rowCount) {
       throw new Error('DATA_NOT_FOUND');

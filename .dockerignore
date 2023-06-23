@@ -1,0 +1,30 @@
+# Git directory
+.git
+.gitignore
+
+# Logs
+*.log
+
+# Nyc output directory and istanbul test coverage directory
+.nyc_output
+coverage
+
+# node_module 
+node_modules/
+
+# Editore config files
+.vs
+.vscode
+.idea
+.history
+
+kubernetes
+
+# Configration directory
+.config
+
+# husky Configration
+.husky
+
+# readme file
+README.md

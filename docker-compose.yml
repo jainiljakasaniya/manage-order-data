@@ -1,0 +1,31 @@
+version: '3'
+services:
+  manage-order-data:
+    container_name: manage-order-data
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_USER: postgres
+      DATABASE_HOST: postgres
+      DATABASE_NAME: orderData
+      DATABASE_PASSWORD: 12345
+      DATABASE_PORT: 5432
+    ports:
+      - "4000:3000"
+    restart: always
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    volumes: 
+      - ./postgresdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: orderData
