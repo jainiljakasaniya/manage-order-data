@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "c456e500-8062-48a0-bb3a-58095065f41b",
+		"name": "manage-order-data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15645443"
+	},
+	"item": [
+		{
+			"name": "Create a new order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerID\": 1,\r\n    \"product\": [{\r\n            \"productID\": 2,\r\n            \"quantity\": 1\r\n    },\r\n    {\r\n            \"productID\": 3,\r\n            \"quantity\": 5\r\n    }],\r\n    \"orderDate\": \"2023-06-23T07:34:11.921Z\",\r\n    \"priority\": \"medium\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/order",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/order",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get an order by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/order/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an order by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/order/2",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"order",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

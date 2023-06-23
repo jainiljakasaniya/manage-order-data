@@ -36,7 +36,7 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-4. The Node.js API should now be running on http://localhost:3000.
+4. The Node.js API should now be running on http://localhost:4000.
 
 ## Tech Stack
 
